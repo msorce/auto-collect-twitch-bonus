@@ -1,5 +1,5 @@
 # Auto collect channel points
-usage
+## usage
 - make a new bookmark
 - call it something like auto-collect
 - set this to the url:
