@@ -6,13 +6,12 @@ example
 */
 // if this exists claimable-bonus__icon
 // click it
-
 const observer = new MutationObserver(function(mutationsList, observer) {
     for(const mutation of mutationsList) {
         if (mutation.type === 'childList') {
             console.log('A child node has been added or removed.');
             mutation.addedNodes.forEach(n => {
-                if (n.classList.contains("claimable-bonus__icon")) {
+                if (n && n.classList.contains("claimable-bonus__icon")) {
                     document.querySelector(".claimable-bonus__icon").click();
                 }
             });
