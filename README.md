@@ -1,4 +1,5 @@
 # Auto collect channel points
+### source code: https://github.com/msorce/auto-collect-twitch-bonus/blob/main/collect.js
 ## usage
 - make a new bookmark
 - call it something like auto-collect
