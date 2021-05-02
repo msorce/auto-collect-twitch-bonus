@@ -6,17 +6,27 @@ example
 */
 // if this exists claimable-bonus__icon
 // click it
-const observer = new MutationObserver(function(mutationsList, observer) {
-    for(const mutation of mutationsList) {
+const observer = new MutationObserver(function (mutationsList, observer) {
+    for (const mutation of mutationsList) {
         if (mutation.type === 'childList') {
-            console.log('A child node has been added or removed.');
             mutation.addedNodes.forEach(n => {
-                if (n && n.classList.contains("claimable-bonus__icon")) {
-                    console.log('collecting bonus');
-                    document.querySelector(".claimable-bonus__icon").click();
+                if (n.querySelector) {
+                    if (n.querySelector(".claimable-bonus__icon")) {
+                        console.log('collecting bonus');
+                        setTimeout(() => {
+                            document.querySelector(".claimable-bonus__icon").click();
+                        }, 500)
+                    }
                 }
             });
         }
     }
 });
-observer.observe(document.querySelector('.community-points-summary '), { attributes: true, childList: true, subtree: true })
+let pointsInt = setInterval(() => {
+    console.log("searching for community points summary");
+    let el = document.querySelector('.community-points-summary ');
+    if (el) {
+        clearInterval(pointsInt);
+        observer.observe(document.querySelector('.community-points-summary '), { attributes: true, childList: true, subtree: true })
+    }
+}, 1000);
