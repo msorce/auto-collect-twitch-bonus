@@ -27,6 +27,7 @@ let pointsInt = setInterval(() => {
     let el = document.querySelector('.community-points-summary ');
     if (el) {
         clearInterval(pointsInt);
-        observer.observe(document.querySelector('.community-points-summary '), { attributes: true, childList: true, subtree: true })
+        alert("👁 now observing for channel points to collect 👁")
+        observer.observe(document.querySelector('.community-points-summary'), { attributes: true, childList: true, subtree: true })
     }
 }, 1000);
