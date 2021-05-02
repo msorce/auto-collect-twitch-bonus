@@ -1,9 +1,18 @@
 # Auto collect channel points
 ### source code: https://github.com/msorce/auto-collect-twitch-bonus/blob/main/collect.js
-## usage
+## Setup
+- go [here](https://raw.githubusercontent.com/msorce/auto-collect-twitch-bonus/main/collect.min.js) and copy all this code to clipboard (ctrl+a ctrl+c)
 - make a new bookmark
-- call it something like auto-collect
-- set this to the url:
+- call it something like auto-collect-twitch
+- right click bookmark
+- edit url
+- paste in code from that link above
+- save
+## Usage
+- go to the twitch channel you want to auto collect points 
+- click the bookmark
+- it should start auto collecting
+- if you have any trouble reach out, ill be glad to help
 ```javascript
-const observer=new MutationObserver(function(e,o){for(const o of e)"childList"===o.type&&o.addedNodes.forEach(e=>{e.querySelector&&e.querySelector(".claimable-bonus__icon")&&(console.log("collecting bonus"),setTimeout(()=>{document.querySelector(".claimable-bonus__icon").click()},500))})});let pointsInt=setInterval(()=>{console.log("searching for community points summary"),document.querySelector(".community-points-summary ")&&(clearInterval(pointsInt),observer.observe(document.querySelector(".community-points-summary "),{attributes:!0,childList:!0,subtree:!0}))},1e3);
+
 ```
