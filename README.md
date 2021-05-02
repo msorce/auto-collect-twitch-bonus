@@ -22,5 +22,6 @@
 - click the bookmark
 - it should start auto collecting
 - if you have any trouble reach out, ill be glad to help
-
+- you can check the console to confirm its working
+![console confirmation](https://github.com/msorce/auto-collect-twitch-bonus/blob/main/readme-assets/console.PNG?raw=true)
 Pogs in the chat for you!
