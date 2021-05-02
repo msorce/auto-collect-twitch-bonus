@@ -1,6 +1,6 @@
 # Auto collect channel points
 ### a bookmarklet that will auto collect channel points when viewing a twitch
-========
+
 ### source code: https://github.com/msorce/auto-collect-twitch-bonus/blob/main/collect.js
 
 ## Setup
